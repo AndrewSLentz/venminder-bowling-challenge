@@ -39,7 +39,6 @@ export class App {
   }
 
   updateScore(player) {
-    console.log(player)
     let finalScore;
     for (let i = 1; i <= 10; i++) {
       const prevTotal = i === 1 ? 0 : player.frameTotals[i - 1];

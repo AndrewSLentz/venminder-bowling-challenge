@@ -14,6 +14,18 @@ div.scoreCard {
   justify-content: center;
 }
 
+div.strike {
+  font-family: sans-serif;
+  width: 15px;
+  text-align: center;
+}
+
+div.spare {
+  width: 15px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
 table {
   margin-bottom: 20px;
 }
@@ -60,6 +72,11 @@ input[type=number] {
 }
 
 div.scoreInput {
+  display: flex;
+  justify-content: center;
+}
+
+div.tenthFrame {
   display: flex;
   justify-content: center;
 }

@@ -1,0 +1,59 @@
+<template>
+  <require from="./styles.css"></require>
+  <div class="scoreCard">
+    <table>
+      <tr>
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+        <th>Total</th>
+        <th></th>
+      </tr>
+      <tr class="tableBody" repeat.for="player of players" >
+        <td>
+          <input type="text" value.bind="player.name">
+        </td>
+        <td class="frames" repeat.for="i of 9">
+          <div class="scoreInput">
+            <input type="number" change.trigger="updateRoll(player, i+1, 1, $event.target.value)">
+            <input type="number"
+              disabled.bind="player.frames[i+1]['1'] == 10"
+              change.trigger="updateRoll(player, i+1, 2, $event.target.value)"
+            >
+          </div>
+          <div class="frameTotal">${player.frameTotals[i+1]}</div>
+        </td>
+        <td>
+          <div>
+            <input type="number" change.trigger="updateRoll(player, 10, 1, $event.target.value)">
+            <input type="number" change.trigger="updateRoll(player, 10, 2, $event.target.value)">
+            <input type="number"
+              disabled.bind="(player.frames['10']['1']*1) + (player.frames[10]['2']*1) < 10"
+              change.trigger="updateRoll(player, 10, 3, $event.target.value)"
+            >
+          </div>
+          <div class="frameTotal">${player.frameTotals[10]}</div>
+        </td>
+        <td class="finalScore">${player.gameTotal}</td>
+        <td>
+          <button class="removePlayerButton"
+            click.trigger="removePlayer(player)"
+            disabled.bind="players.length === 1"
+          >
+            Remove Player
+          </button>
+        </td>
+      </tr>
+    </table>
+    <button click.trigger="addPlayer()">Add Player</button>
+  </div>
+
+</template>

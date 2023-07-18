@@ -1,0 +1,74 @@
+body {
+  background: linear-gradient(to top, #001169, #003088, #004ea5, #006dc1, #008cdb);
+  height: 100vh;
+  margin: 0;
+  color: whitesmoke
+}
+
+div.scoreCard {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  margin-bottom: 20px;
+}
+
+th:first-of-type, td:first-of-type {
+  padding: 10px 40px
+}
+
+tr.tableBody > td {
+  background-color: #2e69f1
+}
+
+tr.tableBody > td:last-of-type {
+  width: 115px;
+  background: transparent;
+}
+
+th, td {
+  padding: 5px 0;
+  height: 30px;
+  width: 65px
+}
+
+td.finalScore {
+  text-align: center;
+}
+
+input {
+  background: none;
+  border: none;
+  color: whitesmoke;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  width: 15px;
+  text-align: center;
+}
+
+div.scoreInput {
+  display: flex;
+  justify-content: center;
+}
+
+div.frameTotal {
+  text-align: center;
+  height: 19px;
+}
+
+button.removePlayerButton {
+  margin-left: 5px
+}
